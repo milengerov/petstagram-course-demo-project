@@ -23,3 +23,14 @@ def like_a_pet(req, pk):
     like.save()
     return redirect("pet_details", current_pet.id)      # redirect to the url with name="pet_details"
 
+
+def create_pet(req):
+    pass
+
+
+def edit_pet(req, pk):
+    pass
+
+
+def delete_pet(req, pk):
+    pass
