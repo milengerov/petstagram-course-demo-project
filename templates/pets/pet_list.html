@@ -12,49 +12,13 @@
 </head>
 
 <body>
-<nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin-bottom:2%">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
-            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavDropdown">
-        <ul class="navbar-nav">
-            <li class="nav-item">
-                <a class="nav-link" href="/">Home</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href={% url "list_all_pets" %}>List All</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href={% url "create_pet" %}>Add pet photo</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Login</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Sign Up</a>
-            </li>
-        </ul>
-    </div>
-</nav>
+{% include 'partials/navbar.html' %}
 <div class="container">
     <h1 class='text-center'>All pet photos</h1>
     <div class="row">
 
         {% for pet in pets %}
-
-            <div class="col-lg-4">
-                <div class="card" style="width: 18rem;">
-                    <img src="{{ pet.image_url }}" class="card-img-top" alt="{{ pet.description }}">
-                    <div class="card-body">
-                        <h5 class="card-title">{{ pet.type }} {{ pet.name }}, Age: {{ pet.age }}</h5>
-                        <p class="card-text">{{ pet.description }}</p>
-                        <a href="{% url "pet_details" pet.id %}" class="btn btn-primary">See details</a>
-                    </div>
-                </div>
-            </div>
-
-
+           {% include "partials/petCard.html" %}
         {% endfor %}
     </div>
 
