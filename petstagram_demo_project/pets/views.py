@@ -66,7 +66,7 @@ def like_a_pet(req, pk):
 
 def create_pet(req):
     if req.method == "POST":
-        form = PetForm(req.POST)
+        form = PetForm(req.POST, req.FILES)
         if form.is_valid():
             form.save()
             return redirect("list_all_pets")
@@ -81,7 +81,7 @@ def edit_pet(req, pk):
     pet = Pet.objects.get(pk=pk)
 
     if req.method == "POST":
-        form = EditPetForm(req.POST, instance=pet)
+        form = EditPetForm(req.POST, req.FILES, instance=pet)
         if form.is_valid():
             form.save()
             return redirect("list_all_pets")
