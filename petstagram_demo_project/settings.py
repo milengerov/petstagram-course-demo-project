@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'petstagram_demo_project.accounts',
     'petstagram_demo_project.common',
     'petstagram_demo_project.pets',
 ]
@@ -147,3 +148,5 @@ MEDIA_ROOT = BASE_DIR / 'media_files'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+AUTH_USER_MODEL = 'accounts.PetstagramUser'

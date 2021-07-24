@@ -21,5 +21,6 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('petstagram_demo_project.common.urls')),
-    path('pets/', include('petstagram_demo_project.pets.urls'))
+    path('pets/', include('petstagram_demo_project.pets.urls')),
+    path('accounts/', include('petstagram_demo_project.accounts.urls'))
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
